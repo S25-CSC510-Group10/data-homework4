@@ -2,7 +2,7 @@
 
 BEGIN { FS="," }  # Set field separator to comma
 
-NR > 1 { class[$2]++ }  # Skip header and count passengers per class
+NR > 1 { class[$3]++ }  # Skip header and count passengers per class
 
 END { 
     for (c in class) 

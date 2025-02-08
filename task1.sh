@@ -1,9 +1,12 @@
 #!/bin/bash
 
-# Run infinite script
+chmod +x infinite.sh
+
+# Run infinite
 sh infinite.sh
 
+# Get process ID (PID)
+PID=$(ps -ef | grep "/usr/bin/sh" | grep -v "grep" | awk '{print $2}')
 
-your script  # run ehere to see what your script produces
- 
-kill -9 $(ps | ...) # run the same script here to see what it produces
+# Kill the infinite process via its PID
+kill -9 $PID
